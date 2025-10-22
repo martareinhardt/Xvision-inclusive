@@ -1,0 +1,16 @@
+import sqlite3
+import json
+
+def init_db():
+    conn = sqlite3.connect('data/user_interests.db')
+    c = conn.cursor()
+    c.execute('CREATE TABLE IF NOT EXISTS users (user_id TEXT PRIMARY KEY, tier TEXT, interests TEXT)')
+    conn.commit()
+    conn.close()
+
+def save_interests(user_id, tier, interests):
+    conn = sqlite3.connect('data/user_interests.db')
+    c = conn.cursor()
+    c.execute("INSERT OR REPLACE INTO users VALUES (?, ?, ?)", (user_id, tier, json.dumps(interests)))
+    conn.commit()
+    conn.close()
