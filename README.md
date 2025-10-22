@@ -1,4 +1,4 @@
-# Xvision-inclusive
+# xAI/X Interative other Feed
 An idea to xAI and X team.
 
 # Vision for a Vibrant X: Inclusive Algorithm and Interactive Features
